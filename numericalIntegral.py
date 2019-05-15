@@ -8,7 +8,6 @@ def sekant_method(low, high):
 def rektangel_method(low,high):
 	return func((low + high) / 2) 
 
-
 """
 Vilken numerisk metod som bör användas
 
@@ -26,24 +25,22 @@ a = 1.          # vänstra gränsen för arean
 b = 5.          # högra gränsen för arean
 dx = 0.1          # bredd på parallelltrapetserna(eller rektanglarna)
  
-# uträkning av antal parallelltrapetser
+# uträkning av antal delinterval
 n = int((b - a) / dx)
  
 # variabeln där arean ska sparas definieras
 Area = 0
  
-# loop som räknar ut arean för varje parallelltrapets och summerar ihop dessa
-
+# loop som räknar ut arean för varje delinterval och summerar ihop dessa
 method = int(input("Vilken numerisk metod bör användas för beräkning? (skriv 1 för sekantmetoden, 2 för rektangelmetoden) -> "))
 for i in range(1, n+1):
-    # x-värdet längst till vänster och längst till höger för varje trapets
+    # x-värdet längst till vänster och längst till höger för varje delinterval
     x0 = a+(i-1)*dx
     x1 = a+i*dx
  
-    # uträkning av arean för varje parallelltrapets
-    Ai_old = dx * (func(x0) + func(x1))/ 2.
+    # uträkning av arean för varje delintrrval
     Ai = numerical_method(method, x0, x1, dx)
-    print("old: {}, new: {}".format(Ai_old,Ai))
+
     # kumulativ summering av arean för parallelltrapetserna tillsammans
     Area = Area + Ai
  
