@@ -41,7 +41,7 @@ for i in range(1, n+1):
     # uträkning av arean för varje delintrrval
     Ai = numerical_method(method, x0, x1, dx)
 
-    # kumulativ summering av arean för parallelltrapetserna tillsammans
+    # kumulativ summering av arean för delintervallerna tillsammans
     Area = Area + Ai
  
 # Resultatet skrivs ut på skärmen
